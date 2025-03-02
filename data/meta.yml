@@ -1,0 +1,8 @@
+project_name: Trashfinder Wiki
+default_og_image: /meta/favicon-32x32.png
+site_manifest: /meta/site.webmanifest
+favicon:
+  small_icon: /meta/favicon-16x16.png
+  large_icon: /meta/favicon-32x32.png
+  apple_touch_icon: /meta/apple-touch-icon.png
+  shortcut_icon: /meta/favicon.ico

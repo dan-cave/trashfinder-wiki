@@ -1,0 +1,9 @@
+footer_links:
+  - link_title: Archives of Nethys
+    link_url: https://2e.aonprd.com/
+    link_label: Archives of Nethys
+    link_icon_path: mask
+  - link_title: GitHub
+    link_url: https://github.com/dan-cave/trashfinder-wiki
+    link_label: Github
+    link_icon_path: /svg/github.svg

@@ -1,0 +1,48 @@
+.gm-mode {
+  display: none;
+  grid-area: gm;
+
+  input {
+    width: inherit;
+    margin: auto;
+    margin-right: -20px;
+    padding: 1em;
+
+    background-color: var(--background-color-alt);
+  }
+
+  button {
+    margin: auto;
+    padding: 1.1em;
+    border: 0;
+    border-radius: 0 1em 1em 0;
+
+    box-shadow: none;
+  }
+
+  #header > & {
+    @media screen and ($break-medium) {
+      display: flex;
+      flex-direction: row;
+
+      width: inherit;
+      margin-right: 0;
+      margin-left: auto;
+    }
+  }
+
+  #mobile-nav > & {
+    & > input {
+      width: 100%;
+    }
+
+    @media screen and ($break-small) {
+      display: flex;
+      flex-direction: row;
+
+      width: inherit;
+      margin-right: 0;
+      margin-left: auto;
+    }
+  }
+}

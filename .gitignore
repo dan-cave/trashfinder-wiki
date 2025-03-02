@@ -1,0 +1,7 @@
+node_modules/
+public/
+resources/
+static/images/
+processed_images/
+
+.env

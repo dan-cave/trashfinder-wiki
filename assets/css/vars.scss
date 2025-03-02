@@ -1,0 +1,51 @@
+:root {
+  // -------------- Colors --------------
+  // Background Colors
+  --background-color: rgba(34, 34, 34, 100%);
+  --background-color-alt: rgba(8, 8, 8, 100%);
+
+  // Border Colors
+  --border-color: rgba(219, 219, 219, 100%);
+
+  // Button Colors
+  --button-base-color: rgba(43, 43, 43, 100%);
+  --button-hover-color: rgba(96, 96, 96, 100%);
+
+  // Focus Colors
+  --focus-color: rgba(150, 191, 171, 100%);
+
+  // Scrollbar
+  --scrollbar-thumb-color: rgba(85, 85, 85, 100%);
+
+  // Typography Colors
+  --form-placeholder-color: rgba(224, 224, 224, 100%);
+  --form-text-color: rgba(240, 240, 240, 100%);
+  --highlight-color: rgba(222, 147, 95, 100%);
+  --link-color: rgba(88,164,224, 100%);
+  --flip-text-color: rgba(230, 237, 243, 100%);
+  --selection-color: rgba(97, 97, 97, 100%);
+  --text-color: rgba(221, 221, 221, 100%);
+  --text-bright-color: rgba(225, 225, 225, 100%);
+
+  // ------------------------------------
+
+  // -------------- Spacing -------------
+  
+
+
+  
+  // Pagefind
+  --pagefind-ui-primary: rgba(216, 216, 216, 100%);
+  --pagefind-ui-text: var(--text-bright-color);
+  --pagefind-ui-background: rgba(29, 31, 33, 100%);
+  --pagefind-ui-border: rgba(43, 43, 43, 100%);
+  --pagefind-ui-tag: rgba(29, 31, 33, 100%);
+  --pagefind-ui-scale: 0.8;
+
+  // Animation
+  --default-animation-duration: 0.1s;
+
+
+  // Uncategorized
+  --select-arrow: url("data:image/svg+xml;charset=utf-8,%3C?xml version='1.0' encoding='utf-8'?%3E %3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' height='62.5' width='116.9' fill='%23161f27'%3E %3Cpath d='M115.3,1.6 C113.7,0 111.1,0 109.5,1.6 L58.5,52.7 L7.4,1.6 C5.8,0 3.2,0 1.6,1.6 C0,3.2 0,5.8 1.6,7.4 L55.5,61.3 C56.3,62.1 57.3,62.5 58.4,62.5 C59.4,62.5 60.5,62.1 61.3,61.3 L115.2,7.4 C116.9,5.8 116.9,3.2 115.3,1.6Z'/%3E %3C/svg%3E");
+}

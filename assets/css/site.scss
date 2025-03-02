@@ -1,0 +1,57 @@
+$break-small: "max-width: 800px";
+$break-medium: "min-width: 801px";
+
+@import "vars";
+@import "elements";
+@import "banner";
+@import "header";
+@import "nav";
+@import "footer";
+@import "gm-mode";
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-color: var(--scrollbar-thumb-color) var(--background-color);
+  scrollbar-width: thin;
+  color-scheme: dark;
+
+  * {
+    outline: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+}
+
+#grid-container {
+  display: grid;
+  grid-template: 
+    "header" auto "main" 1fr / 1fr;
+
+  width: 100%;
+  max-width: 70vw;
+  margin: auto;
+
+
+  main {
+    grid-area: main;
+    padding-top: 3em;
+
+    > :first-child {
+      margin-top: 0;
+    }
+
+    .gm-content {
+      &.gm-hidden {
+        display: none;
+      }
+    }
+  }
+
+  @media screen and ($break-medium) { 
+    grid-template: 
+      "header header" auto "doc-nav main" 1fr "footer footer" auto / 0.5fr 1.5fr;  
+  }
+}

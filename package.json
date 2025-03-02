@@ -1,0 +1,43 @@
+{
+  "dependencies": {
+    "leaflet": "^1.9.4"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.1",
+    "cloudinary": "^2.4.0",
+    "dotenv": "^16.4.5",
+    "eslint": "^9.9.1",
+    "eslint-config-prettier": "^9.1.0",
+    "globals": "^15.9.0",
+    "pagefind": "^1.1.0",
+    "prettier": "^3.3.3",
+    "prettier-plugin-go-template": "^0.0.15",
+    "stylelint": "^16.14.1",
+    "stylelint-config-clean-order": "^7.0.0",
+    "stylelint-config-idiomatic-order": "^10.0.0",
+    "stylelint-config-prettier-scss": "^1.0.0",
+    "stylelint-config-standard": "^37.0.0",
+    "stylelint-config-standard-scss": "^14.0.0"
+  },
+  "scripts": {
+    "decrypt": "node --env-file .env ./build/gmMode.js dec",
+    "encrypt": "node --env-file .env ./build/gmMode.js enc",
+    "format": "prettier . --write",
+    "lint": "eslint . && stylelint '**/*.scss'",
+    "pagefind": "pagefind --site public",
+    "postinstall": "cp ./.hooks/* .git/hooks/",
+    "serve": "pagefind && hugo serve"
+  },
+  "lint-staged": {
+    "*.{js,cjs}": [
+      "eslint --quiet --fix"
+    ],
+    "*.{js,yaml,json,html}": [
+      "prettier --write --ignore-unknown"
+    ],
+    "*.scss": [
+      "stylelint --allow-empty-input \"**/*.scss\" --fix"
+    ]
+  },
+  "type": "module"
+}

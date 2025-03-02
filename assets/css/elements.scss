@@ -1,0 +1,583 @@
+*::selection {
+  color: var(--text-bright-color);
+  background-color: var(--selection-color);
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+
+  background: linear-gradient(to right, rgba(100, 200, 200, 100%), rgba(100, 200, 200, 100%)),
+    linear-gradient(to right, rgba(255, 0, 0, 100%), rgba(255, 0, 180, 100%), rgba(0, 100, 200, 100%));
+  background-repeat: no-repeat;
+  background-position:
+    100% 100%,
+    0 100%;
+  background-size:
+    100% 2px,
+    0 2px;
+
+  transition: background-size 100ms;
+
+  &:hover {
+    background-size:
+      0 2px,
+      100% 2px;
+  }
+}
+
+body {
+  font-family:
+    "DM Sans",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    "Segoe UI Emoji",
+    "Apple Color Emoji",
+    "Noto Color Emoji",
+    sans-serif;
+  font-size: 19px;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--text-color);
+  word-wrap: break-word;
+
+  background-color: var(--background-color);
+}
+
+fieldset {
+  margin: 0;
+  margin-bottom: 12px;
+  padding: 10px;
+  border: 1px #0096bfab solid;
+  border: 1px var(--focus-color) solid;
+  border-radius: 6px;
+}
+
+input {
+  display: block;
+
+  margin-right: 6px;
+  margin-bottom: 6px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+
+  font-family: inherit;
+  font-size: inherit;
+  color: #1d1d1d;
+  color: var(--form-text-color);
+
+  background-color: #efefef;
+  background-color: var(--background-color);
+  outline: none;
+
+  transition:
+    background-color 0.1s linear,
+    border-color 0.1s linear,
+    color 0.1s linear,
+    box-shadow 0.1s linear,
+    transform 0.1s ease;
+  transition:
+    background-color var(--default-animation-duration) linear,
+    border-color var(--default-animation-duration) linear,
+    color var(--default-animation-duration) linear,
+    box-shadow var(--default-animation-duration) linear,
+    transform var(--default-animation-duration) ease;
+
+  :focus {
+    box-shadow: 0 0 0 2px #0096bfab;
+    box-shadow: 0 0 0 2px var(--focus-color);
+  }
+
+  ::placeholder {
+    color: #949494;
+    color: var(--form-placeholder-color);
+  }
+
+  &[type="submit"],
+  &input[type="reset"],
+  &input[type="button"] {
+    cursor: pointer;
+    padding-right: 30px;
+    padding-left: 30px;
+    background-color: var(--button-base-color);
+
+    &:hover {
+      background: var(--button-hover-color);
+    }
+
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+
+  &[type="radio"] {
+    border-radius: 100%;
+  }
+
+  &input[type="range"] {
+    cursor: pointer;
+
+    display: initial;
+
+    margin: 10px 0;
+    padding: 10px 0;
+
+    appearance: none;
+    background: transparent;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+
+  &input[type="checkbox"],
+  &input[type="radio"] {
+    cursor: pointer;
+    display: initial;
+    width: 1em;
+    height: 1em;
+
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 4px;
+  vertical-align: middle;
+}
+
+legend {
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+select {
+  cursor: pointer;
+
+  display: block;
+
+  margin-right: 6px;
+  margin-bottom: 6px;
+  padding: 10px;
+  padding-right: 35px;
+  border: none;
+  border-radius: 6px;
+
+  font-family: inherit;
+  font-size: inherit;
+  color: #1d1d1d;
+  color: var(--form-text-color);
+
+  appearance: none;
+  background: #efefef
+    url("data:image/svg+xml;charset=utf-8,%3C?xml version='1.0' encoding='utf-8'?%3E %3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' height='62.5' width='116.9' fill='%23161f27'%3E %3Cpath d='M115.3,1.6 C113.7,0 111.1,0 109.5,1.6 L58.5,52.7 L7.4,1.6 C5.8,0 3.2,0 1.6,1.6 C0,3.2 0,5.8 1.6,7.4 L55.5,61.3 C56.3,62.1 57.3,62.5 58.4,62.5 C59.4,62.5 60.5,62.1 61.3,61.3 L115.2,7.4 C116.9,5.8 116.9,3.2 115.3,1.6Z'/%3E %3C/svg%3E")
+    calc(100% - 12px) 50% / 12px no-repeat;
+  background: var(--background-color) var(--select-arrow) calc(100% - 12px) 50% / 12px no-repeat;
+  background-color: #efefef;
+  background-color: var(--background-color);
+  outline: none;
+
+  &[multiple] {
+    overflow-y: auto;
+    padding-right: 10px;
+    background-image: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px var(--focus-color);
+  }
+}
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 10px;
+
+  caption {
+    text-align: left;
+  }
+
+  th {
+    font-weight: 600;
+  }
+
+  td,
+  th {
+    padding: 6px;
+    text-align: left;
+    word-wrap: break-word;
+    vertical-align: top;
+  }
+
+  tr {
+    &:nth-child(even) {
+      background-color: #efefef;
+      background-color: var(--background-color);
+
+      button {
+        background-color: #f7f7f7;
+        background-color: var(--background-color-alt);
+
+        &:hover {
+          background-color: #fff;
+          background-color: var(--background-color);
+        }
+      }
+    }
+  }
+
+  &:nth-child(even) {
+    background-color: #efefef;
+    background-color: var(--background-color);
+  }
+}
+
+thead {
+  border-bottom: 1px solid #dbdbdb;
+  border-bottom: 1px solid var(--border-color);
+}
+
+tfoot {
+  border-top: 1px solid #dbdbdb;
+  border-top: 1px solid var(--border-color);
+}
+
+textarea {
+  resize: vertical;
+
+  display: block;
+
+  box-sizing: border-box;
+  margin-right: 6px;
+  margin-right: 0;
+  margin-bottom: 6px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+
+  font-family: inherit;
+  font-size: inherit;
+  color: #1d1d1d;
+  color: var(--form-text-color);
+
+  appearance: none;
+  background-color: #efefef;
+  background-color: var(--background-color);
+  outline: none;
+
+  transition:
+    background-color 0.1s linear,
+    border-color 0.1s linear,
+    color 0.1s linear,
+    box-shadow 0.1s linear,
+    transform 0.1s ease;
+  transition:
+    background-color var(--default-animation-duration) linear,
+    border-color var(--default-animation-duration) linear,
+    color var(--default-animation-duration) linear,
+    box-shadow var(--default-animation-duration) linear,
+    transform var(--default-animation-duration) ease;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px var(--focus-color);
+  }
+
+  &:not([cols]) {
+    width: 100%;
+  }
+
+  &:not([rows]) {
+    height: 140px;
+    min-height: 40px;
+  }
+}
+
+summary {
+  all: revert;
+
+  cursor: pointer;
+
+  display: list-item;
+
+  margin: -10px -10px 0;
+  padding: 10px;
+
+  background-color: #efefef;
+  background-color: var(--background-color);
+  outline: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+blockquote {
+  display: flex;
+
+  margin: 1.5em 0;
+  padding: 0 0 0 1em;
+  padding: 0.5em 1em;
+  border-left: 4px solid #0096bfab;
+  border-left: 4px solid var(--focus-color);
+
+  font-style: italic;
+
+  opacity: 0.8;
+
+  & > footer {
+    border: 0;
+    font-style: normal;
+  }
+
+  & cite {
+    font-style: normal;
+  }
+}
+
+details {
+  all: revert;
+
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  margin: 1em 0;
+  padding: 10px 10px 0;
+  border-radius: 6px;
+
+  background-color: var(--background-color-alt);
+
+  &[open] {
+    padding: 10px;
+
+    summary {
+      margin-bottom: 10px;
+    }
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+
+  & > :not(summary) {
+    margin-top: 0;
+  }
+}
+
+dialog {
+  padding: 10px 30px;
+  border: none;
+  border-color: #dbdbdb;
+  border-color: var(--border-color);
+  border-radius: 6px;
+
+  color: #363636;
+  color: var(--text-color-main);
+
+  background-color: #f7f7f7;
+  background-color: var(--background-color-alt);
+
+  &::backdrop {
+    background: #0000009c;
+    backdrop-filter: blur(4px);
+  }
+
+  & > header:first-child {
+    margin: -10px -30px 10px;
+    padding: 10px;
+    border-radius: 6px 6px 0 0;
+
+    text-align: center;
+
+    background-color: #efefef;
+    background-color: var(--background-color);
+  }
+}
+
+mark {
+  padding: 0 2px;
+  border-radius: 2px;
+
+  color: #000;
+
+  background-color: #ff0;
+  background-color: var(--highlight-color);
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 12px;
+
+  font-size: 2.2em;
+  font-weight: 600;
+  color: var(--text-color);
+
+  & + p {
+    font-size: 1.1em;
+  }
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  position: relative;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: var(--text-color);
+
+  .anchor {
+    position: absolute;
+    top: 0;
+    right: 100%;
+
+    margin-top: 3rem;
+    padding-right: 10px;
+
+    font-size: 1.5ex;
+    line-height: 2em;
+    color: var(--text-bright-color);
+
+    opacity: 0.2;
+
+    transition: opacity 0.2s ease;
+  }
+
+  &:hover .anchor {
+    opacity: 1;
+  }
+}
+
+// Cut the space out from subsequent headings (i.e. h2 followed by h3)
+:is(h1, h2, h3, h4, h5, h6) + :is(h2, h3, h4, h5, h6) {
+  margin-top: 0;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+strong {
+  font-weight: 600;
+  color: #000;
+  color: var(--text-bright-color);
+}
+
+b {
+  font-weight: 600;
+}
+
+q {
+  margin: 1.5em 0;
+  padding: 0.5em 1em;
+  border-left: 4px solid #0096bfab;
+  border-left: 4px solid var(--focus-color);
+
+  font-style: italic;
+
+  &::before,
+  &::after {
+    content: none;
+  }
+}
+
+var {
+  font-family: monospace;
+  font-style: normal;
+  color: #39a33c;
+  color: var(--variable);
+}
+
+// Print styles
+@media print {
+  body,
+  pre,
+  code,
+  summary,
+  details,
+  button,
+  input,
+  textarea {
+    background-color: #fff;
+  }
+
+  button,
+  input,
+  textarea {
+    border: 1px solid #000;
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  pre,
+  code,
+  button,
+  input,
+  textarea,
+  footer,
+  summary,
+  strong {
+    color: #000;
+  }
+
+  summary::marker {
+    color: #000;
+  }
+
+  summary::-webkit-details-marker {
+    color: #000;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  a {
+    color: #00f;
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,43 @@
+<footer>
+  <ul>
+    {{ range site.Data.footer.footer_links }}
+      <li>
+        <a
+          {{ if .link_icon_path }}
+            target="_blank"
+          {{ else }}
+            target="_self"
+          {{ end }}
+          {{ if hasPrefix .link_url "http" }}
+            href="{{ .link_url }}"
+          {{ else }}
+            href="/{{ .link_url | urlize }}"
+          {{ end }}
+        >
+          {{ with .link_label }}
+            {{ . }}
+          {{ end }}
+          {{ if hasPrefix .link_icon_path "/" }}
+            <img
+              class="nav-link-image"
+              src="{{ .link_icon_path }}"
+              alt="{{ site.Data.meta.project_name }} on {{ .link_title }}"
+              width="32"
+              height="32"
+              decoding="async"
+            />
+          {{ else if .link_icon_path }}
+            <img
+              class="nav-link-image"
+              src="{{ index site.Data.images .link_icon_path }}"
+              alt="{{ site.Data.meta.project_name }} on {{ .link_title }}"
+              width="32"
+              height="32"
+              decoding="async"
+            />
+          {{ end }}
+        </a>
+      </li>
+    {{ end }}
+  </ul>
+</footer>

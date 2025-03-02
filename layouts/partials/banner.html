@@ -1,0 +1,13 @@
+{{ with site.Data.banner }}
+  {{ if and .enable_banner (.show_until) }}
+    <header
+      id="banner"
+      class="hidden"
+      data-show-until="{{ .show_until }}"
+      data-pagefind-ignore
+    >
+      {{ .html | safeHTML }}
+      <button aria-label="Dismiss Banner"></button>
+    </header>
+  {{ end }}
+{{ end }}

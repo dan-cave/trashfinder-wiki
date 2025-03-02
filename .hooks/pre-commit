@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+set -eu
+
+npx lint-staged && yarn run encrypt && git add -A .
