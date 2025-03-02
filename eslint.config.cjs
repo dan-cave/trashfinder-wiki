@@ -9,6 +9,6 @@ module.exports = [
     languageOptions: { globals: { ...globals.browser, ...globals.node } },
   },
   {
-    ignores: ["public/", "resources/"],
+    ignores: ["public/", "resources/", ".yarn/", ".pnp.cjs", ".pnp.loader.mjs"],
   },
 ];

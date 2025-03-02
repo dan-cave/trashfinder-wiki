@@ -15,5 +15,7 @@
     "type=bind,source=/home/${localEnv:USER}/.ssh,target=/root/.ssh,readonly",
     "source=profile,target=/root,type=volume",
     "target=/root/.vscode-server,type=volume"
-  ]
+  ],
+  "runArgs": ["--network=host"],
+  "appPort": ["1313:1313"]
 }
