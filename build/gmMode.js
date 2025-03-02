@@ -9,8 +9,13 @@ class GmMode {
 
     this.tagOpen = "{{< gm >}}";
     this.tagClose = "{{< /gm >}}";
-    this.regexp = new RegExp(
-      `${this.tagOpen}(?<gmText>[\\S\\s]+)${this.tagClose}`,
+    this.regexpEnc = new RegExp(
+      `(?<=${this.tagOpen}\\s*)(?<gmText>[^\\s][\\S\\s]+[^\\s])(?=\\s*${this.tagClose})`,
+      "g",
+    );
+    // See ./assets/js/gameMasterMode.js
+    this.regexpDec = new RegExp(
+      `(?<gmText>([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)?\\|([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)?)`,
       "g",
     );
 
@@ -22,11 +27,10 @@ class GmMode {
     let cipher = crypto.createCipheriv(this.ALGORITHM, this.ENCRYPTION_KEY, iv);
     let encrypted = cipher.update(gmText);
     encrypted = Buffer.concat([encrypted, cipher.final()]);
-    return `${this.tagOpen}${iv.toString("base64") + "|" + encrypted.toString("base64")}${this.tagClose}`;
+    return `${iv.toString("base64") + "|" + encrypted.toString("base64")}`;
   }
 
   #decrypt(text) {
-    text = text.replaceAll(/{{< (gm|\/gm) >}}/g, "");
     let textParts = text.split("|");
     let iv = Buffer.from(textParts.shift(), "base64");
     let encryptedText = Buffer.from(textParts.shift(), "base64");
@@ -37,7 +41,7 @@ class GmMode {
     );
     let decrypted = decipher.update(encryptedText);
     decrypted = Buffer.concat([decrypted, decipher.final()]);
-    return `${this.tagOpen}${decrypted.toString()}${this.tagClose}`;
+    return `${decrypted.toString()}`;
   }
 
   async encryptContents() {
@@ -49,8 +53,13 @@ class GmMode {
       const pathStr = `${path.parentPath}/${path.name}`;
       if ((await fs.stat(pathStr)).isFile()) {
         let contents = await fs.readFile(pathStr, { encoding: "utf-8" });
-        contents = contents.replaceAll(this.regexp, this.#encrypt.bind(this));
-        await fs.writeFile(pathStr, contents);
+        if (!contents.match(this.regexpDec)) {
+          contents = contents.replaceAll(
+            this.regexpEnc,
+            this.#encrypt.bind(this),
+          );
+          await fs.writeFile(pathStr, contents);
+        }
       }
     });
   }
@@ -64,8 +73,13 @@ class GmMode {
       const pathStr = `${path.parentPath}/${path.name}`;
       if (pathStr.includes(".md") || pathStr.includes(".html")) {
         let contents = await fs.readFile(pathStr, { encoding: "utf-8" });
-        contents = contents.replaceAll(this.regexp, this.#decrypt.bind(this));
-        await fs.writeFile(pathStr, contents);
+        if (contents.match(this.regexpDec)) {
+          contents = contents.replaceAll(
+            this.regexpDec,
+            this.#decrypt.bind(this),
+          );
+          await fs.writeFile(pathStr, contents);
+        }
       }
     });
   }
