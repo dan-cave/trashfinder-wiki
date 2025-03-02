@@ -39,7 +39,7 @@
       "stylelint --allow-empty-input \"**/*.scss\" --fix"
     ],
     "*.md": [
-      "encrypt"
+      "yarn encrypt"
     ]
   },
   "type": "module"
