@@ -9,16 +9,11 @@
     "ghcr.io/devcontainers/features/node:1": {
       "version": "latest"
     },
-    "ghcr.io/devcontainers/features/github-cli:1": {},
-    "ghcr.io/duduribeiro/devcontainer-features/neovim:1": {
-      "version": "nightly"
-    },
-    "mounts": [
-      "type=bind,source=/home/${localEnv:USER}/.ssh,target=/root/.ssh,readonly",
-      "source=profile,target=/root,type=volume",
-      "target=/root/.vscode-server,type=volume"
-    ]
+    "ghcr.io/devcontainers/features/github-cli:1": {}
   },
-  "runArgs": ["--network=host"],
-  "appPort": ["1313:1313"]
+  "mounts": [
+    "type=bind,source=/home/${localEnv:USER}/.ssh,target=/root/.ssh,readonly",
+    "source=profile,target=/root,type=volume",
+    "target=/root/.vscode-server,type=volume"
+  ]
 }
