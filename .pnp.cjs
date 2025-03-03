@@ -36,7 +36,7 @@ const RAW_RUNTIME_STATE =
           ["lint-staged", "npm:15.4.3"],\
           ["pagefind", "npm:1.3.0"],\
           ["postcss", "npm:8.5.3"],\
-          ["prettier", "npm:3.4.2"],\
+          ["prettier", "npm:3.5.2"],\
           ["prettier-plugin-go-template", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:0.0.15"],\
           ["stylelint", "npm:16.14.1"],\
           ["stylelint-config-clean-order", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:7.0.0"],\
@@ -2126,10 +2126,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["prettier", [\
-      ["npm:3.4.2", {\
-        "packageLocation": "./.yarn/unplugged/prettier-npm-3.4.2-fae349e44a/node_modules/prettier/",\
+      ["npm:3.5.2", {\
+        "packageLocation": "./.yarn/unplugged/prettier-npm-3.5.2-1191b74a1d/node_modules/prettier/",\
         "packageDependencies": [\
-          ["prettier", "npm:3.4.2"]\
+          ["prettier", "npm:3.5.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2147,7 +2147,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["prettier-plugin-go-template", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:0.0.15"],\
           ["@types/prettier", null],\
-          ["prettier", "npm:3.4.2"],\
+          ["prettier", "npm:3.5.2"],\
           ["ulid", "npm:2.3.0"]\
         ],\
         "packagePeers": [\
@@ -2252,7 +2252,7 @@ const RAW_RUNTIME_STATE =
           ["lint-staged", "npm:15.4.3"],\
           ["pagefind", "npm:1.3.0"],\
           ["postcss", "npm:8.5.3"],\
-          ["prettier", "npm:3.4.2"],\
+          ["prettier", "npm:3.5.2"],\
           ["prettier-plugin-go-template", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:0.0.15"],\
           ["stylelint", "npm:16.14.1"],\
           ["stylelint-config-clean-order", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:7.0.0"],\
