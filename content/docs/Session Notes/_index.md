@@ -7,5 +7,5 @@ nav_section: "Session Notes"
 weight: 10
 ---
 {{< gm >}}
-Svnk/dpFeJO6eTLtNmf4kg==|Pck21ZNiadm3tCV8OyjxvQ==
+SCPkCRQ5uDXuMgsxfUw+8Q==|NxrtMfM+hYUz64D4mlANVw==
 {{< /gm >}}
