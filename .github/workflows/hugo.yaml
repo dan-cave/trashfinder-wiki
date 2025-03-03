@@ -44,8 +44,15 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
-      - name: Install Node.js dependencies
-        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+      - name: enable corepack
+        run: corepack enable
+      - name: Set Node Version to LTS
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+          cache: "yarn"
+      - name: Install node dependencies
+        run: yarn install
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
@@ -56,8 +63,6 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
-      - name: enable corepack
-        run: corepack enable
       - name: Set Node Version to LTS
         uses: actions/setup-node@v4
         with:
