@@ -71,7 +71,7 @@ jobs:
       - name: Install node dependencies
         run: yarn install
       - name: Index with Pagefind
-        run: npm run pagefind
+        run: yarn pagefind
       - name: Publish to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
