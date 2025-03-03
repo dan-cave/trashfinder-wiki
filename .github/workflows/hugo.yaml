@@ -56,12 +56,15 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
-      - name: Set Node Version to 22
+      - name: enable corepack
+        run: corepack enable
+      - name: Set Node Version to LTS
         uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: "lts/*"
+          cache: "yarn"
       - name: Install node dependencies
-        run: npm ci
+        run: yarn install
       - name: Index with Pagefind
         run: npm run pagefind
       - name: Publish to Cloudflare Pages
