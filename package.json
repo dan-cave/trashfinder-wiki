@@ -38,7 +38,7 @@
     "*.scss": [
       "yarn stylelint --allow-empty-input \"**/*.scss\" --fix"
     ],
-    "*.md": [
+    "!(*Readme).md": [
       "yarn encrypt"
     ]
   },

@@ -44,21 +44,25 @@ class GmMode {
     return `${decrypted.toString()}`;
   }
 
-  async encryptContents() {
-    const paths = await fs.readdir(this.dir, {
-      recursive: true,
-      withFileTypes: true,
-    });
+  async encryptContents(paths) {
+    if (paths.length === 0) {
+      paths = (
+        await fs.readdir(this.dir, {
+          recursive: true,
+          withFileTypes: true,
+        })
+      ).map((path) => `${path.parentPath}/${path.name}`);
+    }
+
     paths.forEach(async (path) => {
-      const pathStr = `${path.parentPath}/${path.name}`;
-      if ((await fs.stat(pathStr)).isFile()) {
-        let contents = await fs.readFile(pathStr, { encoding: "utf-8" });
+      if ((await fs.stat(path)).isFile()) {
+        let contents = await fs.readFile(path, { encoding: "utf-8" });
         if (!contents.match(this.regexpDec)) {
           contents = contents.replaceAll(
             this.regexpEnc,
             this.#encrypt.bind(this),
           );
-          await fs.writeFile(pathStr, contents);
+          await fs.writeFile(path, contents);
         }
       }
     });
@@ -88,7 +92,11 @@ class GmMode {
 switch (process.argv[2]) {
   case "enc": {
     const gmMode = new GmMode();
-    await gmMode.encryptContents();
+    await gmMode.encryptContents(
+      process.argv
+        .slice(3, process.argv.length)
+        .filter((file) => file.match(/.+\.md/)),
+    );
     break;
   }
   case "dec": {
