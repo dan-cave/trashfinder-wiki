@@ -31,7 +31,7 @@ const RAW_RUNTIME_STATE =
           ["cloudinary", "npm:2.5.1"],\
           ["eslint", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:9.19.0"],\
           ["eslint-config-prettier", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:9.1.0"],\
-          ["globals", "npm:15.14.0"],\
+          ["globals", "npm:16.0.0"],\
           ["leaflet", "npm:1.9.4"],\
           ["lint-staged", "npm:15.4.3"],\
           ["pagefind", "npm:1.3.0"],\
@@ -1262,10 +1262,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["npm:15.14.0", {\
-        "packageLocation": "./.yarn/cache/globals-npm-15.14.0-1cb78aecb8-039deb8648.zip/node_modules/globals/",\
+      ["npm:16.0.0", {\
+        "packageLocation": "./.yarn/cache/globals-npm-16.0.0-7f7c56ae12-8906d5f018.zip/node_modules/globals/",\
         "packageDependencies": [\
-          ["globals", "npm:15.14.0"]\
+          ["globals", "npm:16.0.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2247,7 +2247,7 @@ const RAW_RUNTIME_STATE =
           ["cloudinary", "npm:2.5.1"],\
           ["eslint", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:9.19.0"],\
           ["eslint-config-prettier", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:9.1.0"],\
-          ["globals", "npm:15.14.0"],\
+          ["globals", "npm:16.0.0"],\
           ["leaflet", "npm:1.9.4"],\
           ["lint-staged", "npm:15.4.3"],\
           ["pagefind", "npm:1.3.0"],\
