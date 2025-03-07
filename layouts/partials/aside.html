@@ -1,8 +1,20 @@
-{{ $page := . }}
-<aside>
-  <nav class="docnav" aria-label="{{ site.Data.nav.side_nav_title }}">
-    <div id="docnav-inner" class="docnav-inner">
-      {{ partial "nav.html" . }}
-    </div>
-  </nav>
-</aside>
+<nav>
+  <ul>
+    {{- range .Site.Sections -}}
+      {{- template "nav-section" . -}}
+    {{- end -}}
+  </ul>
+</nav>
+
+{{- define "nav-section" -}}
+  <li>
+    {{ .Title }}
+    {{- if gt (.Page.Pages | len) 0 -}}
+      <ul>
+        {{- range .Page.Pages -}}
+          {{- template "nav-section" . -}}
+        {{- end -}}
+      </ul>
+    {{- end -}}
+  </li>
+{{- end -}}

@@ -1,34 +1,22 @@
-{{ $page := . }}
+<nav>
+  <ul>
+    {{- range sort .Site.Sections "Weight" "asc" -}}
+    <script>console.log({{ . }})</script>
+      {{- template "nav-section" . -}}
+    {{- end -}}
+  </ul>
+</nav>
 
-
-<ol class="nav">
-  <li
-    class="{{ if eq .Site.Home.File.UniqueID $page.File.UniqueID }}
-      active
-    {{ end }}"
-  >
-    <a href="{{ .Site.Home.Permalink | relURL }}">
-      {{ .Site.Home.Params.nav_title }}</a
-    >
+{{- define "nav-section" -}}
+  <li>
+    <a href="{{ .Permalink | relURL }}"> {{ .Params.nav_title }}</a>
+    {{- if gt (.Page.Pages | len) 0 -}}
+      <ul>
+        {{- range sort .Page.Pages "Weight" "asc" -}}
+        <script>console.log({{ . }})</script>
+          {{- template "nav-section" . -}}
+        {{- end -}}
+      </ul>
+    {{- end -}}
   </li>
-
-  {{ $docs := sort (where .Site.Pages "Section" "docs") ".Params.weight" }}
-  {{ $groups := slice }}
-
-  {{ range $groups }}
-    <li>
-      <p class="docnav-title">{{ . }}</p>
-      <ol class="nav">
-        {{ range where $docs ".Params.nav_section" . }}
-          <li
-            class="{{ if eq .File.UniqueID $page.File.UniqueID }}
-              active
-            {{ end }}"
-          >
-            <a href="{{ .Permalink | relURL }}"> {{ .Params.nav_title }}</a>
-          </li>
-        {{ end }}
-      </ol>
-    </li>
-  {{ end }}
-</ol>
+{{- end -}}

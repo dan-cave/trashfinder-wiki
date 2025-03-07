@@ -1,26 +1,11 @@
 aside {
   display: none;
-  grid-area: doc-nav;
+  grid-area: aside;
 
   @media ($break-medium) {
     display: flex;
     padding-top:  3em;
   }
-}
-
-.docnav-title {
-  position: relative;
-
-  display: block;
-
-  height: 30px;
-  margin: 0;
-  padding: 0;
-
-  font-size: 16px;
-  font-weight: 700;
-
-  background: none;
 }
 
 #mobile-nav {
@@ -38,8 +23,10 @@ aside {
   }
 }
 
-.nav {
+nav {
+  display: none;
   display: flex;
+  grid-area: aside;
   flex-direction: column;
   gap: 10px;
 
@@ -48,13 +35,20 @@ aside {
 
   list-style-type: none;
 
+  ul {
+    padding-left: 0.5em;
+    list-style: none;
+  }
+
+  > ul {
+    padding: 0;
+  }
+
   .docnav-mob & {
     margin-top: 0;
   }
 
   & & {
-    padding-left: 16px;
-
     .docnav-mob & {
       padding-right: 16px;
       padding-left: 0;
@@ -80,12 +74,16 @@ aside {
 
     .docnav-mob &::before {
       top: calc(1em / 1.6);
-      right: -16px;
       left: unset;
     }
   }
 
   a {
     color: var(--text-color);
+  }
+
+  @media ($break-medium) {
+    display: flex;
+    padding-top:  3em;
   }
 }

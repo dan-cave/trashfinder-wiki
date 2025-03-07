@@ -1,7 +1,6 @@
 ---
 title: "Erevan"
 nav_title: "Erevan"
-parent: "Players"
 weight: 5
 ---
 

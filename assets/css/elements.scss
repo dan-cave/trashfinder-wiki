@@ -350,7 +350,6 @@ blockquote {
   display: flex;
 
   margin: 1.5em 0;
-  padding: 0 0 0 1em;
   padding: 0.5em 1em;
   border-left: 4px solid #0096bfab;
   border-left: 4px solid var(--focus-color);
@@ -398,46 +397,6 @@ details {
   & > :not(summary) {
     margin-top: 0;
   }
-}
-
-dialog {
-  padding: 10px 30px;
-  border: none;
-  border-color: #dbdbdb;
-  border-color: var(--border-color);
-  border-radius: 6px;
-
-  color: #363636;
-  color: var(--text-color-main);
-
-  background-color: #f7f7f7;
-  background-color: var(--background-color-alt);
-
-  &::backdrop {
-    background: #0000009c;
-    backdrop-filter: blur(4px);
-  }
-
-  & > header:first-child {
-    margin: -10px -30px 10px;
-    padding: 10px;
-    border-radius: 6px 6px 0 0;
-
-    text-align: center;
-
-    background-color: #efefef;
-    background-color: var(--background-color);
-  }
-}
-
-mark {
-  padding: 0 2px;
-  border-radius: 2px;
-
-  color: #000;
-
-  background-color: #ff0;
-  background-color: var(--highlight-color);
 }
 
 h1 {
@@ -518,13 +477,6 @@ q {
   &::after {
     content: none;
   }
-}
-
-var {
-  font-family: monospace;
-  font-style: normal;
-  color: #39a33c;
-  color: var(--variable);
 }
 
 // Print styles

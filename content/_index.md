@@ -1,11 +1,9 @@
 ---
 title: Pagefind
-nav_title: Home
-weight: 1
 ---
 
 {{< gm >}}
-HGcgyfNZBTWPs1t9vJgc3g==|647uB8h+LJkamgDAnb81Vw==
+vPjo2lGerDTX/Kb+IbsGpw==|p+m9GMwBAguco3yyQJHq8Q==
 {{< /gm >}}
 
 Pagefind is a fully static search library that aims to perform well on large sites, while using as little of your users' bandwidth as possible, and without hosting any infrastructure.

@@ -1,8 +1,7 @@
 ---
 title: "Session 0 - August 16 2024"
-nav_title: "Session 0 - August 16 2024"
+nav_title: "0 - August 16 2024"
 weight: 100
-parent: "Session Notes"
 ---
 
 ## Overview

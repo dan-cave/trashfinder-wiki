@@ -52,6 +52,6 @@ html {
 
   @media screen and ($break-medium) { 
     grid-template: 
-      "header header" auto "doc-nav main" 1fr "footer footer" auto / 0.5fr 1.5fr;  
+      "header header" auto "aside main" 1fr "footer footer" auto / 0.5fr 1.5fr;  
   }
 }
